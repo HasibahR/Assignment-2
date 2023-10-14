@@ -28,8 +28,7 @@
 
          button {
            width: 95%;
-           height: 95%;
-
+           height: 95%; 
     
          }
 
@@ -171,28 +170,30 @@
 
 
         <script>
-            var numClicks =0;
+            var numClicksA =0;
+            var numClicksB =0;
+            var numClicksC =0;
 
         function clickCountA() {
-            numClicks++;
+            numClicksA++;
         document.getElementById('ButtonA').disabled=false;
 
         }
 
         function clickCountB() {
-            numClicks++;
-        document.getElementById('ButtonB').disabled=false;
+            numClicksB++;
+        document.getElementById('ButtonB').disabled=false; 
 
         }
 
         function clickCountC() {
-            numClicks++;
+            numClicksC++;
         document.getElementById('ButtonC').disabled=false;
 
         }
 
          function showCount() {
-            document.getElementById("ButtonA").innerHTML = "You have clicked " + clickCountA + " times!";  
+            document.getElementById("ButtonA").innerHTML = "You have clicked " + clickCountA() + " times!";  
         }
 
 
