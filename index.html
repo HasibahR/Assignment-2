@@ -176,24 +176,31 @@
 
         function clickCountA() {
             numClicksA++;
-        document.getElementById('ButtonA').disabled=false;
+            document.getElementById("buttonA").disabled=false;
+        document.getElementById("buttonB").disabled=true;
+        document.getElementById("buttonC").disabled=true;
 
+        document.getElementById("footer")
         }
 
         function clickCountB() {
             numClicksB++;
-        document.getElementById('ButtonB').disabled=false; 
+            document.getElementById("buttonB").disabled=false;
+        document.getElementById("buttonA").disabled=true; 
+        document.getElementById("buttonC").disabled=true;
 
         }
 
         function clickCountC() {
             numClicksC++;
-        document.getElementById('ButtonC').disabled=false;
+            document.getElementById("buttonC").disabled=false;
+        document.getElementById("buttonA").disabled=true;
+        document.getElementById("buttonB").disabled=true;
 
         }
 
          function showCount() {
-            document.getElementById("ButtonA").innerHTML = "You have clicked " + clickCountA() + " times!";  
+            document.getElementById("buttonA").innerHTML = "You have clicked " + clickCountA() + " times!";  
         }
 
 
@@ -319,7 +326,7 @@
 
     </div>
 
-    <div class="footer">
+    <div id="footer" class="footer">
         
     </div>
     
