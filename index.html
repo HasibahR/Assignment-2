@@ -170,46 +170,28 @@
 
 
         <script>
-            var numClicksA =0;
-            var numClicksB =0;
-            var numClicksC =0;
+            var numClicksA = Math.min(Math.max(parseInt(number), 0), 100);
+            var numClicksB = Math.min(Math.max(parseInt(number), 0), 100);
+            var numClicksC = Math.min(Math.max(parseInt(number), 0), 100);
 
         function clickCountA() {
-            numClicksA++;
-            document.getElementById("buttonA").disabled=false;
-        document.getElementById("buttonB").disabled=true;
-        document.getElementById("buttonC").disabled=true;
-
-        document.getElementById("footer")
+   
+        document.getElementById("clickCountA").innerHTML = "numClicksA = " + numClicksA;
         }
 
         function clickCountB() {
-            numClicksB++;
-            document.getElementById("buttonB").disabled=false;
-        document.getElementById("buttonA").disabled=true; 
-        document.getElementById("buttonC").disabled=true;
 
+            document.getElementById("buttonB").disabled=false;
         }
 
         function clickCountC() {
-            numClicksC++;
+    
             document.getElementById("buttonC").disabled=false;
-        document.getElementById("buttonA").disabled=true;
-        document.getElementById("buttonB").disabled=true;
-
         }
 
-         function showCount() {
-            document.getElementById("buttonA").innerHTML = "You have clicked " + clickCountA() + " times!";  
+        function addOneA() {
+        numClicksA = numClicksA + 1;
         }
-
-
-
-
-
-
-
-
 
 
 
@@ -252,8 +234,8 @@
     </div>
 
     <div class="button3"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button onclick="clickCountA()">
-            Add 1
+        <button onclick="addOneA()">
+            Add 1 to A
         </button>
 
 
