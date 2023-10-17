@@ -177,11 +177,11 @@
 
 
         function clickCountA() {
-            document.getElementById("ButtonA").innerHTML = "A = " + numClicksA;
+            document.getElementById("displayValue").innerHTML = "A = " + numClicksA;
             numClicksA= Math.round(numClicksA);
+            numClicksA= Math.max(100)
 
         }
-
 
         function clickCountB() {
 
@@ -195,11 +195,35 @@
 
         function addOneA() {
        numClicksA++;
+       document.getElementById("footer").innerHTML="The value of A has increased by 1!";
+       
+        }
+
+        function addOneB() {
+       numClicksB++;
+       document.getElementById("footer").innerHTML="The value of B has increased by 1!";
+       
+        }
+
+        function addOneC() {
+       numClicksC++;
+       document.getElementById("footer").innerHTML="The value of C has increased by 1!";
+       
+        }
+        
+        function addOneA() {
+       numClicksA++;
+       document.getElementById("footer").innerHTML="The value of A has increased by 1!";
+       
         }
 
 // To show only one function at a time, do it so that everythign shows up in the information bar, and not the actual button itself.
 // Anything that needs to be rounded or capped needs to be in a function
 // Use the onclick function to make the button display turn on
+// * = Multiply
+// / = Divide
+// + = Add
+// - = Subtract
 
         </script>
 
@@ -215,7 +239,7 @@
 
 
 
-    <div class="informationDisplay">
+    <div id="displayValue" class="informationDisplay";>
         Use the buttons below to activate the tracker!
 
       
@@ -224,9 +248,9 @@
 
 
     <div class="button1"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-       <button id="ButtonA" class="displayButton" onclick="clickCountA();">
+       <button id="ButtonA" class="displayButton" onclick="setTimeout(clickCountA, 3000);">
 
-        A
+        Display A Value
 
        </button> 
     </div>
