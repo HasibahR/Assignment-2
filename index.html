@@ -210,10 +210,10 @@
        document.getElementById("footer").innerHTML="The value of C has increased by 1!";
        
         }
-        
-        function addOneA() {
-       numClicksA++;
-       document.getElementById("footer").innerHTML="The value of A has increased by 1!";
+
+        function addTenA() {
+       numClicksA = numClicksA + 10;
+       document.getElementById("footer").innerHTML="The value of A has increased by 10!";
        
         }
 
@@ -248,7 +248,7 @@
 
 
     <div class="button1"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-       <button id="ButtonA" class="displayButton" onclick="setTimeout(clickCountA, 3000);">
+       <button id="ButtonA" class="displayButton" onclick="setTimeout(clickCountA, 2000);">
 
         Display A Value
 
@@ -271,9 +271,8 @@
     </div>
 
     <div class="button4" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button>
-
-
+        <button onclick="addTenA()">
+            Add 10 to A
         </button>
 
     </div>
