@@ -170,31 +170,36 @@
 
 
         <script>
-            var numClicksA = Math.min(Math.max(parseInt(number), 0), 100);
-            var numClicksB = Math.min(Math.max(parseInt(number), 0), 100);
-            var numClicksC = Math.min(Math.max(parseInt(number), 0), 100);
+            var numClicksA = 0;
+            var numClicksB = 0;
+            var numClicksC = 0;
+           
+
 
         function clickCountA() {
-   
-        document.getElementById("clickCountA").innerHTML = "numClicksA = " + numClicksA;
+            document.getElementById("ButtonA").innerHTML = "A = " + numClicksA;
+            numClicksA= Math.round(numClicksA);
+
         }
+
 
         function clickCountB() {
 
-            document.getElementById("buttonB").disabled=false;
+            document.getElementById("ButtonB").disabled=false;
         }
 
         function clickCountC() {
     
-            document.getElementById("buttonC").disabled=false;
+            document.getElementById("ButtonC").disabled=false;
         }
 
         function addOneA() {
-        numClicksA = numClicksA + 1;
+       numClicksA++;
         }
 
-
-
+// To show only one function at a time, do it so that everythign shows up in the information bar, and not the actual button itself.
+// Anything that needs to be rounded or capped needs to be in a function
+// Use the onclick function to make the button display turn on
 
         </script>
 
@@ -219,9 +224,9 @@
 
 
     <div class="button1"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-       <button id="ButtonA" class="displayButton" onclick="showCount()">
+       <button id="ButtonA" class="displayButton" onclick="clickCountA();">
 
-
+        A
 
        </button> 
     </div>
