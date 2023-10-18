@@ -153,6 +153,7 @@
           grid-column-start: 1;
           grid-column-end: 4;
           background: #dd0000;
+          font-size: 20;
           }
 
 
@@ -179,24 +180,36 @@
         function clickCountA() {
             document.getElementById("displayValue").innerHTML = "A = " + numClicksA;
             numClicksA= Math.round(numClicksA);
-            numClicksA= Math.max(100)
+            numClicksA= Math.min(0);
+            numClicksA= Math.max(100);
+
+                if(numClicksA==8){
+                     document.getElementById("displayValue").innerHTML = "You just made Mr. Lipsky's favorite number,  " + numClicksA + "!";
+                }
+                
 
         }
 
         function clickCountB() {
 
-            document.getElementById("ButtonB").disabled=false;
+            document.getElementById("displayValue").innerHTML = "B = " + numClicksB;
+            numClicksA= Math.round(numClicksB);
+            numClicksA= Math.min(0);
+            numClicksA= Math.max(100);
         }
 
         function clickCountC() {
     
-            document.getElementById("ButtonC").disabled=false;
+            document.getElementById("displayValue").innerHTML = "C = " + numClicksC;
+            numClicksA= Math.round(numClicksC);
+            numClicksA= Math.min(0);
+            numClicksA= Math.max(100);
         }
 
         function addOneA() {
        numClicksA++;
        document.getElementById("footer").innerHTML="The value of A has increased by 1!";
-       
+                
         }
 
         function addOneB() {
@@ -216,6 +229,18 @@
        document.getElementById("footer").innerHTML="The value of A has increased by 10!";
        
         }
+        function incrementAll() {
+       numClicksA++;
+       numClicksB++;
+       numClicksC++;
+       document.getElementById("footer").innerHTML="All values have increased by 1!";
+       
+        }
+        function customAddC() {
+       numClicksC = numClicksC + Number(document.getElementById("CustomAddC").input);
+       document.getElementById("footer").innerHTML="All values have increased by 1!";
+       
+        }        
 
 // To show only one function at a time, do it so that everythign shows up in the information bar, and not the actual button itself.
 // Anything that needs to be rounded or capped needs to be in a function
@@ -224,7 +249,8 @@
 // / = Divide
 // + = Add
 // - = Subtract
-
+// <input id= "CustomAddC" width="10"><br>Custom C Value<br></input>
+// < > = = Conditions
         </script>
 
 
@@ -255,10 +281,9 @@
        </button> 
     </div>
 
-    <div class="button2"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button>
-
-
+    <div id="button1" class="button2"  onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
+        <button onclick="incrementAll()">
+            Add 1 to all
         </button>
     </div>
 
@@ -279,9 +304,8 @@
    
     
     <div class="button5" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button id="ButtonB" class="displayButton">
-
-
+        <button id="ButtonB" class="displayButton" onclick="setTimeout(clickCountB, 2000);">
+            Display B Value
         </button>
 
     </div>
@@ -307,17 +331,15 @@
 
     </div>
     <div class="button9" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button id="ButtonC" class="displayButton">
-
-
+        <button id="ButtonC" class="displayButton" onclick="setTimeout(clickCountC, 2000);">
+            Display C Value
         </button>
 
     </div>
 
     <div class="button10" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
         <button>
-
-
+            
         </button>
 
     </div>
