@@ -241,6 +241,26 @@
        document.getElementById("footer").innerHTML="All values have increased by 1!";
        
         }        
+        
+        function deletionAlert() {
+       alert("Are you sure? Double Click to delete.")
+       
+        }  
+        
+        function deleteAll() {
+       numClicksA = 0
+       numClicksB = 0
+       numClicksC = 0
+       document.getElementById("footer").innerHTML="All values have been reset.";
+
+        }  
+        function divideAll() {
+       numClicksA = numClicksA/2
+       numClicksB = numClicksB/2
+       numClicksC = numClicksA/2
+       document.getElementById("footer").innerHTML="All values have been reset.";
+
+        }  
 
 // To show only one function at a time, do it so that everythign shows up in the information bar, and not the actual button itself.
 // Anything that needs to be rounded or capped needs to be in a function
@@ -310,9 +330,8 @@
 
     </div>
     <div class="button6" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button>
-
-
+        <button onclick="deletionAlert()"; ondblclick="deleteAll()">
+            Reset All
         </button>
 
     </div>
@@ -338,8 +357,8 @@
     </div>
 
     <div class="button10" onmouseenter = "this.style='border: 3px solid #0088aa;';" onmouseleave = "this.style='border: 3px solid #000000;';" >
-        <button>
-            
+        <button onclick="divideAll()">
+            Divide All
         </button>
 
     </div>
