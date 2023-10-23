@@ -177,11 +177,10 @@
            
 
 
-        function clickCountA() {
+        function clickCountA(min=0, max=100) {
             document.getElementById("displayValue").innerHTML = "A = " + numClicksA;
             numClicksA= Math.round(numClicksA);
-            numClicksA= Math.min(0);
-            numClicksA= Math.max(100);
+        
 
                 if(numClicksA==8){
                      document.getElementById("displayValue").innerHTML = "You just made Mr. Lipsky's favorite number,  " + numClicksA + "!";
@@ -190,7 +189,7 @@
 
         }
 
-        function clickCountB() {
+        function clickCountB(min=0, max=100) {
 
             document.getElementById("displayValue").innerHTML = "B = " + numClicksB;
             numClicksA= Math.round(numClicksB);
@@ -198,7 +197,7 @@
             numClicksA= Math.max(100);
         }
 
-        function clickCountC() {
+        function clickCountC(min=0, max=100) {
     
             document.getElementById("displayValue").innerHTML = "C = " + numClicksC;
             numClicksA= Math.round(numClicksC);
